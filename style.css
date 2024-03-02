@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+body {
+    /* overflow: hidden; */
+    margin: 2px;
+    padding: 1px;
+    background-color: #000;
+}
+
+.Container {
+    margin: 2px;
+}
+
+.left {
+    width: 21.2vw;
+    margin: 3px;
+
+}
+
+.left .ham {
+    padding: 10px;
+    min-height: 19vh;
+    margin-bottom: 8px;
+
+}
+
+
+
+.logo {
+    margin-top: 2px;
+    width: 50px;
+    padding: 8px 12px;
+    cursor:pointer;
+}
+.logo img{
+    height: 79px;
+    width: 178px;
+}
+
+
+
+.ham ul li {
+    margin-top: -11px;
+    padding: 19px 12px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    width: 14px;
+    cursor: pointer;
+}
+
+.ham ul li img {
+    height: 24px;
+    width: 24px;
+}
+
+
+.left .library {
+    margin-top: 5px;
+
+
+}
+
+.left .library .lib img {
+    height: 24px;
+    width: 24px;
+
+}
+
+.left .library .lib .search img {
+    height: 23px;
+    width: 23px;
+    margin-top: -2px;
+    filter: grayscale();
+
+}
+
+.left .library .lib {
+    margin-top: -11px;
+    padding: 33px 24px;
+    display: flex;
+    gap: 14px;
+    position: relative;
+    font-size: small;
+    list-style: none;
+
+}
+.song-list{
+    
+    color: white;
+    padding: 2px;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #242424#242424;
+    max-height: 50vh;
+    border-radius: 8px;
+
+
+}
+.song-list ul{
+    list-style-type: none;
+    
+    
+}
+.song-list ul li{
+    display: inline-block;
+    font-size: smaller;
+    margin: 2px;
+    
+}
+.card-left{
+    justify-content: space-between;
+    gap: 15px;
+    width: 19vw;
+    padding: 12px 1px;
+    cursor: pointer;
+    
+    
+}
+.artist{
+    font-size: smaller;
+}
+.info{
+    font-size: small;
+    width: 350px;
+}
+
+.footer {
+    font-size: 10px;
+    display: flex;
+    gap: 13px;
+    position: absolute;
+    bottom: 0;
+
+
+
+}
+
+.footer a {
+    color: gray;
+    text-decoration: none;
+
+}
+
+/* yaha se right box */
+.right {
+    min-width: 77.8vw;
+    margin-top: 2px;
+    padding: 0px 4px;
+    position: relative;
+}
+
+.header {
+    height: 3vw;
+    position: sticky;
+    background-color: hsl(0deg 0% 6.27%);
+}
+
+.buttons {
+    
+    position: absolute;
+    right: 10px;
+}
+
+.buttons .signup {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+}
+
+.buttons .login {
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    border-radius: 20px;
+    width: 75px;
+
+}
+
+.playlist {
+    background-color: hsl(0deg 0% 11.37%);
+    min-height: 90vh;
+    position: relative;
+
+
+}
+
+.playlist h1 {
+    cursor: pointer;
+    color: whitesmoke;
+    padding: 10px;
+    text-decoration: none;
+    max-width: fit-content;
+
+}
+
+.undr:hover {
+    filter: brightness(1.2);
+    text-decoration: underline;  
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.card {
+    color: whitesmoke;
+    padding: 5px;
+    margin: 5px;
+    background-color: hsl(0deg 0% 9.02%);
+    width: 220px;
+    position: relative;
+}
+
+.card h1 {
+    font-size: small;
+    padding: 0;
+
+}
+
+.card p {
+    font-size: small;
+    padding-top: 5px;
+
+}
+
+.card img {
+    margin: 15px;
+    border-radius: 9px;
+    width: 175px;
+    object-fit: contain;
+
+
+}
+
+.play-icon {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    top: 105px;
+    right: 86px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+
+}
+
+.card:hover .play-icon {
+    opacity: 1;
+}
+
+.card:hover {
+    background-color: gray;
+    transition: opacity 1s ease;
+}
+
+
+.playbar{
+    border: 5px solid black;
+    
+    margin-bottom: 15xp;
+    padding: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background-color: hsl(0deg 0% 9.02%);
+    border-radius: 8px;
+}
+.playbar:hover{
+    border-color: gray;
+}
+.plug{
+    border: 2px solid red;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    border-radius: 10px;
+    background-color: black;
+    margin: -5px;
+    padding: 1px;
+    left: 0%;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+.musicBar:hover .plug{
+    height: 17px;
+    width: 17px;
+
+}
+.bar{
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    border: 2px solid white;
+    top: 4px;
+    left: 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.musicBar:hover .bar{
+    border: 4px solid white; 
+}
+.play-buttons{
+    position: relative;
+    left: 34vw;
+    cursor: pointer;
+    /* border: 2px solid red; */
+    width: 100px;
+}
+.songtime{
+    position: absolute;
+    right: 5px;
+    top:15px;
+}
