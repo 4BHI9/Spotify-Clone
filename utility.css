@@ -32,3 +32,8 @@
     right: 0px;
     display: absolute;
 }
+.gr-undr:hover {
+    filter: brightness(1.2);
+    text-decoration: underline gray;
+
+}
