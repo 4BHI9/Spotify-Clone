@@ -32,7 +32,7 @@ async function GetSongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1])
+            songs.push(element.href.split(`${folder}/`)[1])
         }
 
     }
@@ -45,13 +45,13 @@ async function GetSongs(folder) {
             `
         <li>
         <div class="card-left border flex items-center">
-            <img src="/images/music.svg" alt="">
+            <img src="images/music.svg" alt="">
             <div class="info">
                 <div class="songName">${song.split("-")[1].replaceAll("%20", " ").replace(".mp3", " ")}</div>
                 <div class="artist">${song.split("-")[0].replaceAll("%20", " ")}</div>
             </div>
 
-            <img class="playNow" src="/images/play.svg" alt="">
+            <img class="playNow" src="images/play.svg" alt="">
         </div>
     </li>`
     }
@@ -71,11 +71,11 @@ async function GetSongs(folder) {
 }
 const playMusic = (track, pause = false) => {
     // let audio = new Audio("/songs/" + track)
-    currentSong.src = (`/${currFolder}/` + track)
+    currentSong.src = (`${currFolder}/` + track)
 
     if (!pause) {
         currentSong.play()
-        play.src = '/images/pause.svg'
+        play.src = 'images/pause.svg'
     }
     document.querySelector(".songinfo").innerHTML = decodeURI(track).split(".mp3")[0].fontcolor("gray")
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00".fontcolor("gray")
@@ -86,7 +86,7 @@ const playMusic = (track, pause = false) => {
 // DISPLAY ALL THE ALBUMS ON THE PAGE
 async function displayAlbums() {
     // console.log("displayAlbums")
-    let a = await fetch((`/songs/`));
+    let a = await fetch((`songs/`));
     let response = await a.text();
     // console.log(response)
     let div = document.createElement("div")
@@ -103,12 +103,12 @@ async function displayAlbums() {
             let folder = e.title
             // console.log((e.title))
             // get metadata for the folder
-            let a = await fetch((`/songs/${folder}/info.json`));
+            let a = await fetch((`songs/${folder}/info.json`));
             let response = await a.json();
             // console.log(response)
             cardContainer.innerHTML = cardContainer.innerHTML + `
             <div data-folder="${folder}" id="sp1" class="card border ">
-            <img src='/songs/${folder}/cover.jpg' alt="">
+            <img src='songs/${folder}/cover.jpg' alt="">
             <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                 height="24" color="#9b9b9b" fill="none">
                 <path
@@ -155,12 +155,12 @@ async function Main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
-            play.src = '/images/pause.svg'
+            play.src = 'images/pause.svg'
 
         }
         else {
             currentSong.pause()
-            play.src = '/images/play.svg'
+            play.src = 'images/play.svg'
         }
     })
 
